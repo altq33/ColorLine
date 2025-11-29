@@ -13,7 +13,29 @@
 		"enabled": true,
 		"indentStyle": "tab",
 		"indentWidth": 2,
-		"lineWidth": 80
+		"lineWidth": 80,
+		"formatWithErrors": false
+	},
+	"javascript": {
+		"formatter": {
+			"arrowParentheses": "always",
+			"bracketSameLine": false,
+			"bracketSpacing": true,
+			"jsxQuoteStyle": "double",
+			"quoteProperties": "asNeeded",
+			"semicolons": "always",
+			"trailingCommas": "all"
+		}
+	},
+	"css": {
+		"formatter": {
+			"quoteStyle": "double"
+		}
+	},
+	"json": {
+		"formatter": {
+			"trailingCommas": "none"
+		}
 	},
 	"linter": {
 		"enabled": true,
@@ -22,15 +44,38 @@
 			"suspicious": {
 				"noUnknownAtRules": "off",
 				"noExplicitAny": "error",
-				"noEmptyBlock": "error"
+				"noEmptyBlock": "error",
+				"noConsole": "warn",
+				"noUnassignedVariables": "error",
+				"noDebugger": "error",
+				"useAwait": "warn"
+			},
+			"correctness": {
+				"noChildrenProp": "warn",
+				"noUnusedVariables": "warn",
+				"noConstantCondition": "warn",
+				"noConstAssign": "error",
+				"noEmptyPattern": "warn",
+				"noInnerDeclarations": "error",
+				"noInvalidBuiltinInstantiation": "error",
+				"noInvalidUseBeforeDeclaration": "error",
+				"noNestedComponentDefinitions": "error",
+				"noReactPropAssignments": "error"
 			},
 			"style": {
 				"noMagicNumbers": "warn",
 				"noDefaultExport": "error",
 				"noNestedTernary": "error"
 			},
+			"security": {
+				"noBlankTarget": "warn",
+				"noDangerouslySetInnerHtml": "warn"
+			},
 			"complexity": {
-				"noExcessiveCognitiveComplexity": "off"
+				"noExcessiveCognitiveComplexity": "off",
+				"noUselessCatch": "warn",
+				"noUselessEmptyExport": "warn",
+				"noUselessFragments": "warn"
 			},
 			"a11y": {
 				"useAltText": "error"
@@ -44,7 +89,8 @@
 	"assist": {
 		"actions": {
 			"source": {
-				"organizeImports": "on"
+				"organizeImports": "on",
+				"useSortedProperties": "on"
 			}
 		}
 	}
