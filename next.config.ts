@@ -5,4 +5,5 @@ const nextConfig: NextConfig = {
 	reactCompiler: true,
 };
 
+// biome-ignore lint/style/noDefaultExport: <config>
 export default nextConfig;
