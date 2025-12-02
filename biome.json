@@ -64,7 +64,6 @@
 			},
 			"style": {
 				"noMagicNumbers": "warn",
-				"noDefaultExport": "error",
 				"noNestedTernary": "error"
 			},
 			"security": {
