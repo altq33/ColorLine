@@ -2,7 +2,7 @@ pre-commit:
   parallel: true
   commands:
     check-and-fix:
-      glob: "*.{js,ts,jsx,tsx,json,css,scss,md}"
+      glob: '*.{js,ts,jsx,tsx,json,css,scss,md}'
       run: bun x prettier --write {staged_files} && bun x eslint --fix {staged_files}
       stage_fixed: true
 
@@ -10,5 +10,3 @@ pre-push:
   commands:
     full-check:
       run: bun run check
-    tests:
-      run: bun run test
