@@ -1,13 +1,14 @@
 pre-commit:
-  parallel: true 
-  commands:
-    check:
-      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
-      run: npx @biomejs/biome check --no-errors-on-unmatched --files-ignore-unknown=true {staged_files} 
-
-pre-push:
   parallel: true
   commands:
-    check:
-      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
-      run: npx @biomejs/biome check --no-errors-on-unmatched --files-ignore-unknown=true {push_files}
+    check-and-fix:
+      glob: '*.{js,ts,jsx,tsx,json,css,scss,md}'
+      run: bun x prettier --write {staged_files} && bun x eslint --fix {staged_files}
+      stage_fixed: true
+
+pre-push:
+  commands:
+    full-check:
+      run: bun run check
+    tests:
+      run: bun run test
